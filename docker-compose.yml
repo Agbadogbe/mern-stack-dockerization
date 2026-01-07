@@ -1,0 +1,28 @@
+services:
+  # API Backend Node.js
+  server:
+    build: ./server
+    container_name: api_server
+    restart: always
+    env_file:
+      - ./server/.env
+    networks:
+      - app-net
+    ports:
+      - "5000:5000"
+
+  # Application Frontend React (servie par Nginx)
+  client:
+    build: ./client
+    container_name: react_client
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - server
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    driver: bridge
