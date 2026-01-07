@@ -1,5 +1,3 @@
----
-
 # 🛡️ SafeNote - Application de Gestion de Notes Dockerisée
 
 **SafeNote** est une application web Fullstack (MERN) conçue selon le principe du **"Security by Design"**. Cette version a été entièrement **conteneurisée avec Docker** pour garantir un déploiement isolé, reproductible et sécurisé.
